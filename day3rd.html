@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main>
+
+            <h2>Q11) </h2>
+            <ul id="subjects">
+                <li>java</li>
+                <li>javaScript</li>
+                <li>html/css</li>
+                <li>php</li>
+
+            </ul>
+            <br>
+            <h2>Q12)</h2>
+            <button id="myButton">myButton</button>
+
+            <br> 
+            <h2>Q13)</h2>
+        <div
+            class="container"
+        >
+        <h4>User Detail Form</h4>
+        <form method="post" action="" id="userDetailForm">
+            <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="uname"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="uemail"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="pass"></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+            </table>
+          </form>
+        </div>
+        
+            
+
+            <script>
+                //Q.11) Demonstrate how to create a new <li> element, set its text content, and append it to an existing <ul> element on a web page using java Script.
+
+               const sub = document.getElementById("subjects");
+               console.log(sub);
+               const li = document.createElement("li");
+               li.innerHTML = "DB"; 
+               console.log(li);
+               sub.appendChild(li);
+               //Add Secound Subject
+               const li2 = document.createElement("li");
+               li2.innerHTML = "Logical Building"
+               console.log(li2);
+               sub.appendChild(li2);
+
+               //Q12) emplement an event listener that triggers an alert when a button with the id "myButton" is clicked on a web page.
+
+               const btn = document.getElementById("myButton");
+               btn.addEventListener("click", ()=>{
+                alert("myButton is clicked");
+               })
+
+               //Q13) create a form with fields for name, email, and password. using Javescript, implement client-side validation for the following criteria.
+               // a) Name should contain only alphabetic characters.
+               // b) Email should match a valid email format.
+               // c) Password should have a minimum length of 8 characters, including at least one uppercase letter, one lowercase letter, and one digit.
+
+               const form = document.getElementById("userDetailForm");
+               form.addEventListener("submit", (event)=>{
+                event.preventDefault();
+                
+               const name = document.getElementById("uname").value;
+               const email = document.getElementById("uemail").value;
+               const pass = document.getElementById("pass").value;
+
+               if(!/^[a-zA-Z]+$/.test(name)){
+                alert("User Name is Not Valid Format ('Tom The Don')")
+               }
+               if(!/^[^\s@]+@[^\s]+\.[^\s]+$/.test(email) ){
+                alert("Email is not valid");
+                
+               }
+               if(pass.legth < 8 || 
+               !/[a-z]/.test(pass) ||
+               !/[A-Z]/.test(pass) ||
+               !/\d/.test(pass)){
+                alert("Password should have a minimum length of 8 characters, including at least one uppercase letter, one lowercase letter, and one digit ")
+               }
+
+               });
+
+
+               
+            </script>
+
+
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
