@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  <form method="" action="#">
+	<table>
+	<tr>
+		<td>User Name: </td>
+		<td><input type="text" name="" id="name"></td>
+	</tr>
+	<tr>
+		<td>Password: </td>
+		<td><input type="password" name="" id="pass"></td>
+	</tr>
+	<tr>
+        <td><input type="reset"></td>
+		<td><input type="submit" id="btn"></td>
+	</tr>
+	</table>
+  </form>
+
+
+
+  <script>
+    const btn = document.getElementById("btn");
+    const name = document.getElementById("name");
+    const pass = document.getElementById("pass");
+
+    btn.addEventListener("click", () => {
+        if(name.value ===""){
+
+            alert("Enter Username!");
+        }else if(pass.value.length < 8 ){
+            alert("Pass length is >8! ");
+
+        }
+    })
+
+  </script>
+ </body>
+</html>

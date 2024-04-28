@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Q11.</h3>
+    <!--Q11) Demonstrate how to create a new <li> element, set its text content, and append it to an existing <ul> element on a web page using javaScript  -->
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <button onclick="addItem()">Add New Item</button>
+<!-- Q11) end  -->
+<br><br>
+<!-- Implement an event listner that triggers an alert when a button with the ID "myButton" i clicked on a web page. -->
+<h3>Q12)</h3>
+    <button id = "myButton">Click me</button>
+<br><br>
+
+    <!-- create a form with fields for name, email, and pass. Using JavaScript, Implement clint-side Validation for the following criteria:
+    a. Name should Contain only charechters.
+    b. Email should match a valid email format
+    c. Passowrd should have a minimum length of 8 characters, including at least one upper case letter, one lower case letter, and one digit. -->
+    <h3>Q13)</h3>
+    <form method="#" action="">
+        <table>
+        <tr>
+            <td>User Name: </td>
+            <td><input type="text" name="" id="name"></td>
+        </tr>
+        <tr>
+            <td>User Email-id: </td>
+            <td><input type="text" name="" id="email"></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><input type="password" name="" id="pass"></td>
+        </tr>
+        <tr>
+            <td><input type="reset"></td>
+            <td><input type="submit" id="btn"></td>
+        </tr>
+        </table>
+      </form>
+    
+    
+    <script>
+        // Q11) Start 
+        function addItem() {
+            let newItem = document.createElement("li");
+            
+            let text = document.createTextNode("New Item");
+            newItem.appendChild(text);
+
+            let list = document.getElementById("myList");
+
+            list.appendChild(newItem);
+        }
+        //Q11) end.
+
+        // Q12) start
+        const b = document.getElementById("myButton");
+        b.addEventListener("click", ()=>{
+            alert("myButton is clicked by user. ")
+        });
+        //Q12) end.
+
+        //Q13) Start
+
+        const name = document.getElementById("name").value;
+        const pass = document.getElementById("pass").value;
+        const email = document.getElementById("email".value);
+        const btn = document.getElementById("btn");
+
+        var nameRegex = /^[a-zA-Z\s]$/;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var passwordRegex = /^(?=,*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+        btn.addEventListener("click",()=>{
+            if(name.value )
+            if(pass.value.length >= 8){
+                alert("password should be contain 8 characters.")
+            }
+        })
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
